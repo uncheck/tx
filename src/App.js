@@ -7,7 +7,7 @@ import FeePage from "./pages/FeePage";
 
 import hslot from "./assets/hslot.jpg";
 
-const time = "2:23";
+const time = "3:45";
 const events = {
   name: "Harry Styles: Love On Tour",
   title: "Harry Styles Presale Powered by Ticketmas..."
@@ -28,33 +28,33 @@ paid: true,
   // edit here to change ticket state
   // if you edit the state also update 
   // the email confirmation below
-  date: "Mon , Oct 25, 8PM • TD Garden",
+  date: "Sat , Sep 25, 8PM • United Center",
   emailInfo: {
-    date: "Mon • Oct 25, 2021 • 8:00 PM",
-    location: "TD Garden —  Boston, MA",
+    date: "Sat • Sep 25, 2021 • 8:00 PM",
+    location: "United Center — Chicago, IL",
   },
 
   // screen record countdown
   // Format "MM DD YY, h:mm a"
-  countdown: "10 22 2021, 1:00 am",
+  countdown: "09 22 2021, 1:00 am",
   
   // Edit here to change seating position
   seatMap:  [
-      {
-        sec: "CHERRY",
-        row: "GAA2",
-        seat: "-",
-      },
-      {
-        sec: "CHERRY",
-        row: "GA3",
-        seat: "-",
-      },
-      {
-        sec: "CHERRY",
-        row: "GA9",
-        seat: "-",
-      },
+    {
+      sec: "CHERRY",
+      row: "GA3",
+      seat: "-",
+    },
+    {
+      sec: "CHERRY",
+      row: "GA4",
+      seat: "-",
+    },
+    {
+      sec: "CHERRY",
+      row: "GA6",
+      seat: "-",
+    },
     ]
   };
 
@@ -69,7 +69,7 @@ function App() {
       />
       <Route
         path="/ticket"
-        render={(routeProps) => <Ticket info={events} {...routeProps} />}
+        render={(routeProps) => <Ticket info={events} {...routeProps} time={time} />}
       />
       <Route
         path="/email"
@@ -84,7 +84,7 @@ function App() {
 
       <Route
         path="/transfer"
-        render={(routeProps) => <Transferred {...routeProps} />}
+        render={(routeProps) => <Transferred time={time} {...routeProps} />}
       />
      
       <Route

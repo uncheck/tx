@@ -40,7 +40,7 @@ const CustomForm = () => {
 
   const number = 3;
   const section = "CHERRY"
-  const row = "GA2, GA3 & GA9"
+  const row = "GA3, GA4 & GA6"
 
   return (
     <Box>

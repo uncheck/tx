@@ -138,7 +138,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Ticket = ({ info }) => {
+const Ticket = ({ info ,time}) => {
   const classes = useStyles();
   const history = useHistory();
   const settings = {
@@ -158,7 +158,7 @@ const Ticket = ({ info }) => {
   const handleDrawerClose = () => setOpen(false);
 
   return (
-    <Layout>
+    <Layout time={time}>
       <AppBar position="static" className={classes.appBar}>
         <Toolbar>
           <IconButton

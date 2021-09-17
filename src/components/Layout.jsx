@@ -123,12 +123,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Layout = ({ children, navbar }) => {
+const Layout = ({ children, navbar, time }) => {
   const classes = useStyles();
 
   // CHANGE TIME OF TICKET SCREEN RECORD
-  const time = "6:16";
-
   return (
     <div className={classes.root}>
       <div className={classes.siteDetails}>
