@@ -7,7 +7,7 @@ import FeePage from "./pages/FeePage";
 
 import hslot from "./assets/hslot.jpg";
 
-const time = "3:45";
+const time = "12:48";
 const events = {
   name: "Harry Styles: Love On Tour",
   title: "Harry Styles Presale Powered by Ticketmas..."
@@ -16,14 +16,15 @@ const events = {
 // user info/client info --- email with your name on it
 user: "example@gmail.com",
 
-// fee info
+// fee & transfer info
+success: true,
 userName: "Vanessa",
-clientName: "Chloe Martin",
+clientName: "Andrea Martinez",
 taxFee: 100,
 paid: true,
+// number of tickets
+tix: 4,
 
-    // number of tickets
-    tix: 3,
     
   // edit here to change ticket state
   // if you edit the state also update 
@@ -84,7 +85,7 @@ function App() {
 
       <Route
         path="/transfer"
-        render={(routeProps) => <Transferred time={time} {...routeProps} />}
+        render={(routeProps) => <Transferred info={events} time={time} {...routeProps} />}
       />
      
       <Route

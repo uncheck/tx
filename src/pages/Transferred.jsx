@@ -12,30 +12,35 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Transferred = ({time}) => {
+const Transferred = ({time, info}) => {
   const classes = useStyles();
 
-  const name = "Emma Huerta";
-  // const number = 2;
-  const hours = 24;
+  const {clientName, success, tix} = info;
+
+  const hours = 6;
 
   return (
     <Layout time={time}>
       <Box mt={10} mb={3}>
-        <Alert severity="error">Send Error</Alert>
+        <Alert severity={success ? "success" : "error"}>{success ? "Send Complete" : "Send Error" }</Alert>
       </Box>
       <Container>
         <Box mb={3}>
           <Typography gutterBottom variant="h6" color="initial">
-            Transfer Not Processed
-            {/* You Are All Set */}
+            {
+              success ? "You Are All Set" : 
+            "Transfer Not Processed"
+            }
           </Typography>
           <Typography variant="body1" color="initial" component="p">
-            {/* There are now {number} ticket(s) heading to {name}, We'll notify you
-            with an email about your transfer. Once {name} accepts and claim the
-            ticket, your original tickets will no longer be valid. */}
-            These tickets are not SOLO tickets as they share one barcode. Can
-            only be sent to {name} as a pair of linked tickets.
+             {
+             success ?
+             `There are now ${tix} ticket(s) heading to ${clientName}, We'll notify you
+            with an email about your transfer. Once ${clientName} accepts and claim the
+            ticket, your original tickets will no longer be valid.`  : 
+`            These tickets are not SOLO tickets as they share one barcode. Can
+            only be sent to ${clientName} as a pair of linked tickets.`
+            }
           </Typography>
         </Box>
         <Box my={2} className={classes.next}>
@@ -43,7 +48,7 @@ const Transferred = ({time}) => {
             What's next
           </Typography>
           <Typography variant="body2" color="initial">
-            Once {name} accepts ticket transfer the original will no longer be
+            Once {clientName} accepts ticket transfer the original will no longer be
             valid. Just incase something changes, you can cancel your ticket
             transfer request as long as the tickets have not been accepted.
             Tickets will be active in recievers wallet in {hours} hours due to
